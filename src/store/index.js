@@ -25,12 +25,9 @@ export default function (/* { ssrContext } */) {
   const Store = createStore({
     modules: {
       Auth: require('./AuthStore').default,
-      Blotter: require('./BlotterStore').default,
-      Certificate: require('./CertificateStore').default,
+      // Role: require('./RoleStore').default,
+      // User: require('./UserStore').default,
       Dashboard: require('./DashboardStore').default,
-      Profiling: require('./ProfilingStore').default,
-      PWD: require('./PWDStore').default,
-      Senior: require('./SeniorStore').default,
     },
 
     // enable strict mode (adds overhead!)
