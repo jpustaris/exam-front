@@ -5,8 +5,7 @@ import axios from 'axios';
 export default {
     namespaced: true,
     state: {
-      first_name: '',
-      last_name: '',
+      name: '',
       user_id:'',
       role: '',
       email: '',
@@ -16,8 +15,7 @@ export default {
       GET_PROFILE(state) {
         return {
           user_id: state.user_id,
-          first_name: state.first_name,
-          last_name: state.last_name,
+          name: state.name,
           role: state.role,
           email: state.email,
         }
@@ -32,20 +30,15 @@ export default {
       },
      SET_PROFILE(state, data) {
       state.user_id    = data.id
-      state.first_name    = data.first_name
-      state.last_name    = data.last_name
+      state.name    = data.name
       state.role  = data.role
       state.email   = data.email
      },
      RESET(state) {
       state = {
-        store_name: '',
-        store_id: null,
-        store_code: '',
         role_id: null,
         role_name: '',
-        first_name: '',
-        last_name: '',
+        name: '',
         email: ''
       }
      },

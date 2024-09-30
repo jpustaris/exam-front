@@ -12,14 +12,14 @@
           <q-space />
           <q-btn color="primary q-mx-lg" flat round dense>
           </q-btn>
-          <q-btn class="bg-dark text-white text-bold" round dense :label="profile.first_name.charAt(0) + profile.last_name.charAt(0)">
+          <q-btn class="bg-dark text-white text-bold" round dense :label="profile.name.charAt(0)">
             <q-menu>
               <q-list style="min-width: 220px" class="bg-white">
                 <q-item clickable v-close-popup>
                   <q-item-section avatar>
                     <q-icon name="account_circle" />
                   </q-item-section>
-                  <q-item-section>{{profile.first_name}} {{profile.last_name}}</q-item-section>
+                  <q-item-section>{{profile.name}}</q-item-section>
                 </q-item>
                 <q-item @click.capture="logoutUser" clickable v-close-popup>
                   <q-item-section avatar>
@@ -49,7 +49,7 @@
           <q-list padding>
             <q-item>
               <q-item-section class="main-title" v-if="!miniState">
-                <span class="text-body1 text-weight-bolder text-center">{{profile.first_name}} {{profile.last_name}}</span>
+                <span class="text-body1 text-weight-bolder text-center">{{profile.name}}</span>
               </q-item-section>
             </q-item> 
 
@@ -77,7 +77,7 @@
               </q-item>
               <q-separator />
 
-              <q-item to="/seniors" clickable v-ripple exact  :class="{ 'selected-sidenav': $route.path === '/seniors' }">
+              <q-item to="/task-management" clickable v-ripple exact  :class="{ 'selected-sidenav': $route.path === '/task-management' }">
                 <q-item-section avatar>
                   <q-avatar>
                     <q-tooltip class="bg-dark text-subtitle2" anchor="center right" self="center start" v-if="miniState">
@@ -190,7 +190,6 @@
 
 import { mapActions, mapGetters, mapMutations } from 'vuex'
 import { defineComponent, ref } from 'vue'
-import moment from 'moment'
 
 export default defineComponent({
   name: 'MainLayout',
@@ -211,9 +210,6 @@ export default defineComponent({
     }
   },
   computed: {
-    // ...mapGetters('Notification', {
-    //   notifications: 'GET_NOTIFICATIONS'
-    // }),
     ...mapGetters('Auth', {
       profile: 'GET_PROFILE',
     }),
@@ -228,29 +224,21 @@ export default defineComponent({
     alertBGColor: 'bg-green',
     alertColor: 'text-green',
     loader_text: "",
-    setIntervals: {
-      // hubDecCurrent: process.env.HUB_DEC_CURRENT_INTERVAL
-    }
   }),
   mounted() {
-    // setInterval(async () => {
-    //   await this.getCurrentHubDec();
-    //   let value = this.currentHubDec;
-    //   this.selectedHub = value.alias;
-    // }, this.setIntervals.hubDecCurrent);
+    if(!this.profile){
+      this.getProfile();
+    }
   },
   methods: {
     ...mapActions('Auth', [
       'logout',
       'getProfile',
-    //   'checkAuth'
     ]),
  
-
     async logoutUser(){
       console.log("Logout....")
-      console.log(this.profile.user_id)
-        await this.logout({
+         await this.logout({
         user_id: this.profile.user_id,
       })
     }
@@ -261,8 +249,6 @@ export default defineComponent({
       alert("Error retrieving profile details")
       await this.getProfile()
     }
-
-  //   this.selectedHub = this.currentHubDec
   }
 })
 </script>

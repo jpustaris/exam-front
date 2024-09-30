@@ -25,8 +25,8 @@ export default function (/* { ssrContext } */) {
   const Store = createStore({
     modules: {
       Auth: require('./AuthStore').default,
-      // Role: require('./RoleStore').default,
-      // User: require('./UserStore').default,
+      TaskStatus: require('./TaskStatusStore').default,
+      TaskManagement: require('./TaskManagementStore').default,
       Dashboard: require('./DashboardStore').default,
     },
 

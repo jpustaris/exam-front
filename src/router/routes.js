@@ -4,6 +4,7 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Dashboard.vue') },
+      { path: '/task-management', component: () => import('pages/TaskManagement.vue') },
       { path: '/settings/user-management', component: () => import('pages/settings/UserManagement.vue') },
       { path: '/settings/role-management', component: () => import('pages/settings/RoleManagement.vue') },
     ],
