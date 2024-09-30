@@ -1,0 +1,612 @@
+// Custom variables for order monitoring cards
+/***
+$order-status-standard: 				#388E3C; //dark
+$order-status-standard-hover:		#129c17; //light
+$order-status-lapsed: 					$white;
+$order-status-lapsed-hover: 		$secondary;
+$order-status-pending: 					#ffcc00;
+$order-status-pending-hover: 		#eabc02;
+$order-status-pending-text: 		$dark;
+$order-status-rider-back: 			#66BB6A; //bland
+$order-status-rider-back-hover: #6cc36f; //light
+***/
+
+$text-shadow: 1px 1px 2px $dark;
+$text-shadow: none;
+
+.order-search-box {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	padding-left: 3px !important;
+	padding-right: 0 !important;
+	font-size: 12px !important;
+}
+
+.order-cards {
+	overflow-y: scroll;
+	height: auto !important;
+}
+
+.order-tab {
+	border-radius: 20px;
+	font-size: 12px;
+	padding: 20px 15px;
+	margin: 12px 15px 12px 0;
+	min-height: 125px;
+	line-height: 14px;
+  box-shadow: 1px 1px 2px 2px $outline;
+  background-color: $white;
+}
+
+.order-tab .text-subtitle1 {
+	line-height: 20px !important;
+}
+
+.order-tab:hover,
+.order-tab:active,
+.order-tab.selected {
+	cursor: pointer;
+	transition: box-shadow 0.5s ease;
+}
+
+.order-tab.selected {
+	outline: solid 3px #42A5F5;
+  margin: 12px 15px 12px 0;
+}
+
+.order-tab:hover {
+  background-color: #ededed;
+}
+
+/*** Color Status Changes
+
+.color_status_standard {
+	background: $order-status-standard;
+	color: #E0E0E0 !important;
+}
+
+.color_status_standard:hover {
+	background: $order-status-standard-hover;
+}
+
+.color_status_lapsed {
+	background: $order-status-lapsed;
+	color: $accent;
+	text-shadow: $text-shadow;
+}
+
+.color_status_lapsed:hover {
+	background: $order-status-lapsed-hover;
+}
+
+.color_status_pending {
+	background: $order-status-pending;
+  color: #303030;
+}
+
+
+.color_status_pending:hover {
+	background: $order-status-pending-hover;
+}
+
+.color_status_rider_back {
+	background: $order-status-rider-back !important;
+	color: $white !important;
+	text-shadow: $text-shadow;
+}
+
+.color_status_rider_back:hover {
+	background: $order-status-rider-back-hover !important;
+}
+
+.color_status_standard:hover,
+.color_status_lapsed:hover,
+.color_status_pending:hover,
+.color_status_rider_back:hover {
+	box-shadow: 0px 0px 2px $secondary !important;
+}
+
+.color_status_standard {
+	background: $order-status-standard;
+	color: $accent;
+}
+
+.color_status_standard:hover {
+	background: $order-status-standard-hover;
+}
+
+.color_status_pending {
+	background: $order-status-pending;
+	color: $accent;
+
+	.text-primary {
+		color: $order-status-pending-text !important;
+	}
+
+	.bg-primary {
+		background-color: $order-status-pending-text !important;
+	}
+}
+
+.color_status_pending:hover {
+	background: $order-status-pending-hover;
+}
+
+.color_status_rider_back {
+	background: $order-status-rider-back !important;
+	color: $accent;
+	text-shadow: $text-shadow;
+}
+
+.color_status_rider_back:hover {
+	background: $order-status-rider-back-hover !important;
+}
+
+***/
+
+.font_normal {
+	font-weight: normal !important;
+}
+
+.font_bold {
+	font-weight: bold !important;
+}
+
+.font_italic {
+	font-weight: italic !important;
+}
+
+.order-status-float {
+	position: sticky;
+	bottom: 0px;
+}
+
+.order-details {
+	overflow-y: scroll !important;
+	max-height: 77vh;
+}
+
+.order-details-header {
+	display: none;
+}
+
+.hide {
+	display: none !important;
+}
+
+.show {
+	display: block !important;
+}
+
+.font_normal {
+	font-weight: normal !important;
+}
+
+.font_bold {
+	font-weight: bold !important;
+}
+
+.font_italic {
+	font-weight: italic !important;
+}
+
+.order-details {
+	overflow: auto;
+}
+
+.order-details-header {
+	display: none;
+}
+
+.hide {
+	display: none !important;
+}
+
+.show {
+	display: block !important;
+}
+
+.order-cards {
+	max-height: 76.5vh;
+	overflow: auto;
+	padding-left: 4px;
+	border-right: 2px solid #dedede;
+}
+
+.new-order-notes-counter {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 1rem;
+	font-weight: normal;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+}
+
+.order-header {
+	padding-left: 0px;
+}
+
+.order-details {
+	max-height: 76.5vh;
+	overflow: auto;
+	position: sticky;
+	bottom: 0;
+}
+
+.order-details-info {
+  span {
+    word-break: break-all;
+  }
+}
+
+.order-details div {
+	line-height: 14px;
+}
+
+.order-status {
+	position: sticky;
+	bottom: 0;
+	margin-bottom: 0 !important;
+  border-radius: 20px;
+  box-shadow: inset 1px 2px $outline !important;
+}
+
+.login-page {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.login-card {
+	width: 55%;
+	height: 600px;
+	background-color: $white;
+	border-radius: 20px;
+	box-shadow: 0 3px 3px $outline;
+  outline: 1px $info solid;
+}
+
+.left-section {
+	margin-top: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.image-container {
+	width: 80%;
+}
+
+.right-section {
+	margin-top: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.field-container {
+	width: 90%;
+}
+
+.q-field--outlined .q-field__control {
+  border-radius: 30px;
+  box-shadow: 1px 1px $outline;
+}
+
+.q-field--outlined .q-field__control:hover:before {
+	border: 3px solid $secondary;
+	border-radius: 30px;
+}
+
+.q-field--outlined .q-field__control:before {
+	border: 2px solid $outline;
+	border-radius: 30px;
+}
+
+.q-field__messages {
+	color: $dark;
+}
+
+.login-input .q-field__messages {
+	color: $primary;
+}
+
+.bottom-text,
+p {
+	color: $primary;
+	font-size: 18px;
+}
+
+.login-btn {
+	background-color: $primary;
+	font-weight: 900;
+	font-size: 18px;
+	width: 200px;
+	height: 50px;
+	color: $secondary;
+	border-radius: 20px;
+	text-transform: capitalize;
+}
+
+.forgot-pword-link {
+	cursor: pointer;
+}
+
+.text-title-login {
+	font-weight: 900;
+	font-size: 20px;
+}
+
+.notif-count {
+	color: $white;
+	background-color: $primary;
+	border-radius: 50%;
+	position: absolute;
+	font-size: 10px;
+	width: 16px;
+	height: 16px;
+	top: -2px;
+	right: -0.5px;
+	line-height: 1.6em;
+	font-weight: bold;
+}
+
+.notification-card {
+	transition: background 0.5s ease;
+	transition: transform 0.2s ease-in-out;
+}
+
+.notification-card:hover {
+	cursor: pointer;
+	background: $secondary;
+	border-radius: 5px;
+	transform: scale(1.05);
+}
+
+.unread {
+	background: $primary;
+	width: 8px;
+	height: 8px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	border-radius: 50%;
+}
+
+.notification-loader {
+	position: absolute;
+	z-index: 2;
+	left: 45%;
+}
+
+.gray-background {
+	background: rgb(207, 207, 207);
+}
+
+.custom_selected .q-field__native {
+	color: #000000;
+	font-weight: bolder !important;
+}
+
+.border-bottom {
+	border-bottom: 1px solid #000;
+}
+
+.notif-header {
+	background-color: $positive;
+	color: $dark;
+	padding: 10px;
+	font-size: 20px;
+	font-weight: 800;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-title {
+	font-size: 20px;
+	line-height: 25px;
+	font-weight: 700;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.q-expansion-item--expanded, .q-expansion-item__toggle-icon {
+
+  &--expanded {
+    color: $dark
+  }
+
+	&__toggle-icon {
+    color: $dark
+  }
+}
+
+.q-item-section {
+	padding-left: 55px;
+}
+
+.sidenav-list {
+  .q-item {
+    color: #757575;
+  }
+}
+
+.selected-sidenav {
+
+  &.q-router-link--active {
+    background-color: $secondary;
+    color: $dark;
+
+    .text-expansion {
+      color: $dark;
+      font-weight: bolder;
+    }
+  }
+}
+
+.temp-login-img,
+.temp-login-username {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.temp-login-username {
+	margin-top: -20px;
+}
+
+.temp-login-username p {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.hub-select i {
+	color: $accent;
+}
+
+.hand-cursor {
+	cursor: pointer;
+}
+
+.home-button {
+	margin: 10px;
+	padding: 50px;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.home-buttons {
+	margin-top: 70px;
+}
+
+.home-button-text {
+	position: absolute;
+	bottom: 7%;
+	width: 100%;
+	left: 0%;
+	text-transform: capitalize;
+	font-size: 17px;
+	font-weight: 400;
+}
+
+.search-text {
+	background-color: $white;
+	font-weight: bold;
+	color: $dark;
+	border-radius: 70px;
+	border-bottom: none !important;
+	width: 55%;
+}
+
+.hub-pin-textfield,
+.authorize-textfield {
+	background-color: $white;
+	font-weight: bold;
+	color: $dark;
+	border-radius: 70px;
+	padding: 0 20px;
+	border-bottom: none !important;
+  box-shadow: 1px 3px 1px 1px $outline;
+	width: 100%;
+	margin-top: 25px;
+}
+
+.hubdec-reason-select {
+	background-color: $primary;
+	border-radius: 70px;
+	padding: 0 20px;
+}
+
+.table thead tr {
+	background-color: $white !important;
+	color: $dark !important;
+}
+
+.table th {
+	font-weight: bold !important;
+}
+
+.select-options {
+	background-color: $white;
+	border-radius: 70px;
+	padding: 0 20px;
+	margin-right: 8px;
+}
+
+.select-options .q-field__messages div {
+	color: $dark;
+}
+
+.q-field__native span {
+	font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+	.order-details {
+		position: absolute;
+		background: rgb(229, 229, 229);
+		display: none;
+		max-height: 82vh !important;
+	}
+
+	.order-cards {
+		max-height: 82vh !important;
+	}
+
+	.q-pa-lg {
+		padding: 0px !important;
+	}
+
+	.order-header {
+		padding: 10px;
+	}
+
+	.order-details-header {
+		display: block;
+	}
+
+	.float-right {
+		float: none;
+	}
+}
+
+.expansion-card{
+  margin-top: -18px;
+}
+
+.expansion-card{
+  margin-top: -18px;
+}
+
+.order-price{
+  font-size: 15px;
+  color: #000;
+}
+
+.order-time{
+  font-size: 2.5em;
+  color: #000;
+}
+
+.order-label{
+  font-size: 12px;
+}
+
+.order-value{
+  font-size: 18px;
+  font-weight: bold;
+  word-break: break-all;
+}
+.expansion_list .q-item__label, 
+.fa-caret-down,
+.fa-caret-right{
+  color: #4E6772;
+}
+
+.textbox-error .q-field__messages div{
+  color: #BF0015 !important;
+}
